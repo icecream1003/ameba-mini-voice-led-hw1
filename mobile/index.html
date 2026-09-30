@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMB82-MINI 手機控制</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <p class="tag">AIoT · 手機控制</p>
+    <h1>AMB82-MINI LED</h1>
+    <p class="sub">手機與電腦連同一個 Wi-Fi；電腦透過 USB 連接板卡。</p>
+
+    <section class="card">
+      <label for="pairing">配對碼</label>
+      <input id="pairing" type="text" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="電腦視窗顯示的 6 位數" autocomplete="off">
+      <p class="hint">啟動電腦上的橋接程式後，將它顯示的配對碼填在這裡。</p>
+    </section>
+
+    <section class="card">
+      <label for="command">語音或文字指令</label>
+      <input id="command" type="text" enterkeyhint="send" placeholder="點手機鍵盤上的麥克風，說：左邊開燈" autocomplete="off">
+      <p class="hint">點輸入框，再點手機鍵盤的🎙️語音輸入，說「左邊開燈」、「右邊開燈」或「閃爍三次」。辨識文字出現後按「送出」。</p>
+      <p class="hint">若送出其他語句，系統會將藍燈與綠燈都關閉。</p>
+      <button id="send" type="button">送出指令</button>
+      <div class="shortcuts">
+        <button type="button" data-command="左邊開燈">藍燈</button>
+        <button type="button" data-command="右邊開燈">綠燈</button>
+        <button type="button" data-command="閃爍三次">閃爍三次</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>操作回饋</h2>
+      <p id="result" role="status">尚未送出指令</p>
+      <p>板卡回報的輸出設定：<strong id="state">未知</strong></p>
+      <p class="hint">此回報是板卡程式設定值；請直接觀察 LED 是否實際發光。</p>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>

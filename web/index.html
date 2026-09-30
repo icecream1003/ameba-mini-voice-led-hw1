@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ameba Mini 語音控制 LED</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">AIoT · Vibe Coding 專題</p>
+      <h1>Ameba Mini 語音控制 LED</h1>
+      <p>說出「左邊開燈」、「右邊開燈」或「閃爍三次」，控制板上的藍燈與綠燈。</p>
+    </header>
+
+    <section class="card connection" aria-labelledby="connection-title">
+      <div>
+        <h2 id="connection-title">裝置連線</h2>
+        <p id="connection-state" role="status">尚未連線</p>
+      </div>
+      <div class="actions">
+        <button id="connect-button" type="button">連接開發板</button>
+        <button id="disconnect-button" type="button" class="secondary" disabled>中斷連線</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="voice-title">
+      <h2 id="voice-title">語音指令</h2>
+      <p class="hint">請使用電腦的麥克風。每次按下按鈕後說一句指令；「閃爍三次」會讓兩燈一起閃三次，再恢復原狀態。</p>
+      <button id="listen-button" type="button" disabled>開始聆聽</button>
+      <dl class="readout">
+        <div><dt>辨識文字</dt><dd id="transcript">尚無</dd></div>
+        <div><dt>判斷結果</dt><dd id="interpretation">尚無</dd></div>
+        <div><dt>執行情形</dt><dd id="execution" role="status">尚無</dd></div>
+      </dl>
+    </section>
+
+    <section class="card" aria-labelledby="led-title">
+      <h2 id="led-title">板卡回報的輸出設定</h2>
+      <p class="hint">此處顯示板卡程式回覆的設定；LED 是否實際發光，請直接觀察板卡。</p>
+      <div class="leds">
+        <div class="led"><span class="lamp blue" id="blue-lamp"></span><strong>藍燈</strong><span id="blue-state">未知</span></div>
+        <div class="led"><span class="lamp green" id="green-lamp"></span><strong>綠燈</strong><span id="green-state">未知</span></div>
+      </div>
+    </section>
+
+    <details class="card">
+      <summary>測試與除錯</summary>
+      <p class="hint">語音顯示 no-speech 時，先檢查瀏覽器是否真的收到麥克風聲音。</p>
+      <button id="mic-test-button" type="button">檢查麥克風（5 秒）</button>
+      <p id="mic-test-result" role="status" class="hint">尚未檢查</p>
+      <div class="meter" aria-hidden="true"><span id="mic-level"></span></div>
+      <p class="hint">先用文字指令確認通訊和 LED，再測語音。測試文字也遵守相同的指令判斷規則。</p>
+      <label for="test-input">輸入測試文字</label>
+      <div class="test-row">
+        <input id="test-input" type="text" value="左邊開燈" autocomplete="off">
+        <button id="test-button" type="button" disabled>送出測試</button>
+      </div>
+      <p class="hint">辨識到非控制語句時會傳送安全關燈指令，使藍燈與綠燈都熄滅；沒有辨識文字時則不傳送。</p>
+    </details>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

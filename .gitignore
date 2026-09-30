@@ -1,0 +1,15 @@
+# Local build and test files
+__pycache__/
+*.py[cod]
+docs/.build/
+
+# Personal report and Office temporary files; submit the final PDF separately
+docs/*.docx
+docs/*.pdf
+~$*
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

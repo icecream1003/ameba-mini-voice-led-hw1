@@ -1,0 +1,17 @@
+:root { font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif; color: #eaf0f8; background: #111a29; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: linear-gradient(160deg, #172c45, #101625); }
+main { max-width: 600px; padding: 24px 16px 40px; margin: auto; }
+.tag { margin: 0; color: #75d4e8; font-size: .82rem; font-weight: 700; letter-spacing: .12em; }
+h1 { margin: 8px 0; font-size: 2rem; }
+.sub, .hint { color: #b5c7dd; line-height: 1.5; }
+.hint { font-size: .9rem; }
+.card { margin-top: 16px; padding: 20px; border: 1px solid #344861; border-radius: 16px; background: #1b2a3d; }
+h2 { font-size: 1.1rem; margin: 0 0 12px; }
+label { display: block; margin-bottom: 10px; font-weight: 700; }
+input { display: block; width: 100%; padding: 14px; border: 1px solid #607995; border-radius: 10px; color: white; background: #101c2c; font: inherit; font-size: 1rem; }
+button { width: 100%; min-height: 48px; border: 0; border-radius: 10px; color: #081a28; background: #69d4e8; font: inherit; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .5; }
+.shortcuts { display: flex; gap: 8px; margin-top: 10px; }
+.shortcuts button { background: #344f68; color: white; font-size: .88rem; }
+#result { min-height: 1.5em; line-height: 1.5; }
