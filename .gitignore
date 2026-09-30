@@ -4,8 +4,8 @@ __pycache__/
 docs/.build/
 
 # Personal report and Office temporary files; submit the final PDF separately
-docs/*.docx
-docs/*.pdf
+*.docx
+*.pdf
 ~$*
 
 # Editor and operating system files
